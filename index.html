@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><rect fill='#8ab7ff' width='1600' height='900'/><polygon fill='#12a7cc' points='957 450 539 900 1396 900'/><polygon fill='#591faa' points='957 450 872.9 900 1396 900'/><polygon fill='#3092d3' points='-60 900 398 662 816 900'/><polygon fill='#6619a3' points='337 900 398 662 816 900'/><polygon fill='#6a78c9' points='1203 546 1552 900 876 900'/><polygon fill='#71139c' points='1203 546 1552 900 1162 900'/><polygon fill='#9657a9' points='641 695 886 900 367 900'/><polygon fill='#7a0c95' points='587 900 641 695 886 900'/><polygon fill='#ad3176' points='1710 900 1401 632 1096 900'/><polygon fill='#82058f' points='1710 900 1401 632 1365 900'/><polygon fill='#aa0e3a' points='1210 900 971 687 725 900'/><polygon fill='#880088' points='943 900 1210 900 971 687'/></svg>
+        <div id="startGame">
+            <div id="gameName">
+                <p class="logoName">
+                    <span>C</span>
+                    <span>A</span>
+                    <span>T</span>
+                    <span>C</span>
+                    <span>H</span>
+                    <span>E</span>
+                    <span>M</span>
+                </p>
+                <a id="playButton" href="#" onclick="game.start()">Play</a>
+                <h4 id="note">note: <span>blue</span>diamond always come firsts</h4>
+            </div>
+
+            <div id="explanation">
+                <div id="explain1">
+                    <h4>Gem stones </br> with three colors</h4>
+                    <div id="content">
+                        <div id="gemDemo">
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+                <div id="explain2">
+                    <h4>Tap or click to change the color match with the gems</br>(Blue, Red or Yellow)</h4>
+                    <div id="content">
+
+                    </div >
+                </div>
+            </div>
+        </div>
+
+        <div id="stopGame">
+            <div id="scoreContainer">
+                <h1>CATCHEM</h1>
+                <div id ="score"></div>
+                <div id="result"></div>
+                <h4> Tweet and challenge with your friends</h4>
+                <p>
+                    <a id="tweet" href="#" onclick="game.generateTweet()">
+                        <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                    </a>
+                </p>
+                <div>
+                        <a class="play-again" href="#" onclick="game.start()">Play Again</a>
+                        <a class="main-menu" href="#" onclick="game.intro()">Menu</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

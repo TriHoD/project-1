@@ -11,20 +11,24 @@
 </head>
 <body>
     <div class="container">
-            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><rect fill='#8ab7ff' width='1600' height='900'/><polygon fill='#12a7cc' points='957 450 539 900 1396 900'/><polygon fill='#591faa' points='957 450 872.9 900 1396 900'/><polygon fill='#3092d3' points='-60 900 398 662 816 900'/><polygon fill='#6619a3' points='337 900 398 662 816 900'/><polygon fill='#6a78c9' points='1203 546 1552 900 876 900'/><polygon fill='#71139c' points='1203 546 1552 900 1162 900'/><polygon fill='#9657a9' points='641 695 886 900 367 900'/><polygon fill='#7a0c95' points='587 900 641 695 886 900'/><polygon fill='#ad3176' points='1710 900 1401 632 1096 900'/><polygon fill='#82058f' points='1710 900 1401 632 1365 900'/><polygon fill='#aa0e3a' points='1210 900 971 687 725 900'/><polygon fill='#880088' points='943 900 1210 900 971 687'/></svg>
-        <div id="startGame">
+        <div id="follower">
+            <div id="circle"></div>
+        </div>
+        <div class="start-game game-full-flex" id="start-game">
             <div id="gameName">
-                <p class="logoName">
+                <p id="logoGame">
                     <span>C</span>
                     <span>A</span>
                     <span>T</span>
                     <span>C</span>
                     <span>H</span>
+                    <span>G</span>
                     <span>E</span>
                     <span>M</span>
                 </p>
                 <a id="playButton" href="#" onclick="game.start()">Play</a>
-                <h4 id="note">note: <span>blue</span>diamond always come firsts</h4>
+                <!-- <h4 id="note">note: <span> blue </span> diamond always come firsts</h4> -->
+                <h4 id="hint">Hint: <span style="color: #37b5f0">&nbsp;&nbsp;blue&nbsp;&nbsp;</span> diamond always come firsts </h4>
             </div>
 
             <div id="explanation">
@@ -51,8 +55,8 @@
 
         <div id="stopGame">
             <div id="scoreContainer">
-                <h1>CATCHEM</h1>
-                <div id ="score"></div>
+                <h1>CATCHGEM</h1>
+                <div id ="finalScore"></div>
                 <div id="result"></div>
                 <h4> Tweet and challenge with your friends</h4>
                 <p>
@@ -61,12 +65,18 @@
                     </a>
                 </p>
                 <div>
-                        <a class="play-again" href="#" onclick="game.start()">Play Again</a>
-                        <a class="main-menu" href="#" onclick="game.intro()">Menu</a>
+                        <a id="playAgain" href="#" onclick="game.start()">Play Again</a>
+                        <a id="mainMenu" href="#" onclick="game.intro()">Menu</a>
                 </div>
             </div>
         </div>
-        
+
+        <div class="scene">
+                <div class="learn-to-play">Click to change the color!</div>
+                <div class="score" id="score"></div>
+                <div class="ball-holder"></div>
+            </div>
+
     </div>
     <script src="js/app.js"></script>
 </body>

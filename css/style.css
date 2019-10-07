@@ -1,3 +1,222 @@
-body{
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'><rect fill='#8ab7ff' width='1600' height='900'/><polygon fill='#12a7cc' points='957 450 539 900 1396 900'/><polygon fill='#591faa' points='957 450 872.9 900 1396 900'/><polygon fill='#3092d3' points='-60 900 398 662 816 900'/><polygon fill='#6619a3' points='337 900 398 662 816 900'/><polygon fill='#6a78c9' points='1203 546 1552 900 876 900'/><polygon fill='#71139c' points='1203 546 1552 900 1162 900'/><polygon fill='#9657a9' points='641 695 886 900 367 900'/><polygon fill='#7a0c95' points='587 900 641 695 886 900'/><polygon fill='#ad3176' points='1710 900 1401 632 1096 900'/><polygon fill='#82058f' points='1710 900 1401 632 1365 900'/><polygon fill='#aa0e3a' points='1210 900 971 687 725 900'/><polygon fill='#880088' points='943 900 1210 900 971 687'/></svg>
+
+body {
+    /* background-color: #28DAD4; */
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    background-color: #d3dbff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23afccab' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23a988aa' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%236cbba6' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23a374a4' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%2300a7b4' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%239d5f9e' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23008ec6' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23964897' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23006ec8' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%238f2f90' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%236240aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#follower {
+  position: absolute;
+  top: 50%;
+  background-color: red;
+  left: 50%;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+}
+
+#circle {
+    position: absolute;
+    -webkit-animation: pulse 2s infinite;  /* Chrome, Safari, Opera */
+    animation: pulse 2s infinite;
+    background: white;
+    border-radius: 50%;
+    height: 0em;
+    width: 0em;
+    margin-top: 0em;
+    margin-left: 0em;
+}
+
+
+a {
+    text-decoration: none;
+    color: blue;
+} 
+
+.container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.game-full-flex {
+    position: fixed;
+    /* display: none;  */
+    /* // gets updated to flex with JS */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 35%;
+    left: 33%;
+    z-index: 9998;
+    
+}
+
+
+#gameName {
+    width: 600px;
+    height: 162px;
+    background-color: #4C4660;
+    border: 4px solid rgb(199, 184, 187);
+    border-radius: 68px;
+    text-align: center;
+    margin-top: -10%;
+}
+
+#logoGame {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 100px;
+        letter-spacing: -0.1em;
+        margin-top: 10px;
+        margin-bottom: 4px;
+        text-align: center;
+
+}
+
+span {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+#playButton {
+    display: inline-block;
+    background-color: rgb(199, 184, 187);
+    border: 4px solid #fff;
+    border-radius: 100px;
+    color: #2f77b5;
+    width: 200px;
+    height: 56px;
+    font-size: 42px;
+    text-align: center;
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 56px;
+    text-decoration: none;
+}
+a:hover {
+    opacity: 0.7;
+}
+
+a:hover {
+    background-color: lighten(#FF4571, 5%);
+}
+
+#hint {
+    color: #FF4571;
+    font-size: 20px;
+}
+
+
+#explain1 {
+    position: absolute;
+    bottom:50%;
+}
+
+#explain2 {
+    position: absolute;
+    bottom: 60%;
+    left: 30%;
+}
+.content {
+    justify-content: center;
+}
+
+#stopGame {
+    justify-content: center;
+}
+#scoreContainer {
+    background-color: #4C4660;
+    width: 433px;
+    height: 386px;
+    border-radius: 38px;
+    text-align: center;
+}
+h1 {
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.1em;
+    margin-top: 20px;
+    margin-bottom: 4px;
+    font-size: 64px;
+}
+#finalScore {
+    color: #FFE345;
+    font-weight: 900;
+    font-size: 130px;
+    letter-spacing: -6px;
+    line-height: 110px;
+}
+
+#result {
+    color: #FF4571;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 30px;
+}
+h4 {
+    color: #fff;
+    margin-top: 12px;
+}
+#tweet {
+    background: #fff;
+    padding: 8px 20px;
+    border-radius: 4px;
+    color: #55ACEE;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 24px;
+    display: inline-block;
+}
+/* #tweet.hover:hover{
+    background-color: #55ACEE;
+    color: #fff;
+} */
+
+i {
+    font-size: 24px;
+    top: 2px;
+    right: 2px;
+    position: relative;
+}
+#playAgain {
+    background-color: #FF4571;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 26px;
+    padding: 6px 24px;
+    border-radius: 22px;
+    margin: 6px 4px;
+    display: inline-block;
+}
+#mainMenu {
+    background-color: #44BFA3;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-size: 26px;
+    padding: 6px 24px;
+    border-radius: 22px;
+    margin: 6px 4px;
+    display: inline-block;
 }

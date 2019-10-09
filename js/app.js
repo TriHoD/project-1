@@ -8,21 +8,20 @@ class Game {
 
         this.timeline = new TimelineMax({smoothChildTiming: true});
         this.time = 1.6; // initial speed
-        this.colors = ["#C20027", "#32a852", "#286FB4"]; // the 3 colors used in the game
-        this.colorsRGBA = ["rgba(194, 0, 39, 1)", "rgba(50, 168, 82, 1)", "rgba(40, 111, 180, 1)"];
+        this.colors = ["#f7e411", "#44BFA3", "#286FB4"]; // the 3 colors used in the game
+        this.colorsRGBA = ["rgba(247, 228, 17, 1)", "rgba(68, 191, 163, 1)", "rgba(40, 111, 180, 1)"];
         this.color = this.colors[0]; // the intial color of the ball
         this.prevColor = null; // used as a holder to prevent ball colors from repeating
     }
 
-    /**
-     * The game screen is scalable. I took 1200x800px as the initial scale.
-     * In order to display the game an many screen sizes properly
-     * I have to compare the player's sreen size to the initial scale,
-     * then scale the game using CSS Transform to fit the screen properly
-     * The function is called in the 
-     controller andr and anywhere where I need
-     * to recalculate the scale on screen resize or device rotation
-     */
+    //  * The game screen is scalable. I took 1200x800px as the initial scale.
+    //  * In order to display the game an many screen sizes properly
+    //  * I have to compare the player's sreen size to the initial scale,
+    //  * then scale the game using CSS Transform to fit the screen properly
+    //  * The function is called in the 
+    //  controller andr and anywhere where I need
+    //  * to recalculate the scale on screen resize or device rotation
+    //  */
     calculateScale() {
         this.screen = $(window).width(); // screen width
         this.screenHeight = $(window).height();
@@ -202,7 +201,7 @@ class Game {
      */
     moveToStart() {        
 
-        let tip = new TimelineMax({ delay: 2 });
+        let tip = new TimelineMax({ delay: 2});
 
         tip
             .fromTo('.learn-to-play', 1, { scale: 0 }, { scale: 1, opacity: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
@@ -335,7 +334,6 @@ class Game {
 
         this.score = score;
     }
-
 }
 
 class Stick {
@@ -354,16 +352,16 @@ class Stick {
 class Color {
 
     constructor() {
-        this.colors = ["#C20027", "#32a852", "#286FB4"];
+        this.colors = ["#f7e411", "#44bfa3", "#286FB4"];
     }
-
+//  44bfa3 32a852
     getRandomColor() {
         let color = this.colors[Math.floor(Math.random() * 3)]; 
         return color;
     } 
 
     colorHexToName(color) {
-        let colors = ["#C20027", "#32a852", "#286FB4"];
+        let colors = ["#f7e411", "#44bfa3", "#286FB4"];
         let names = ["red", "green", "blue"];
         let index = colors.indexOf(color);
         if(index == -1) return false;
@@ -378,14 +376,14 @@ class Color {
         let index = el.data("index");
         if(index === undefined) { index = 0; }
         else { index += 1; }
-        if(index == 3) index = 0;
+        if (index == 3) index = 0;
         el
             .css('background-color', this.colors[index])
             .data('index', index);
 
         el.removeClass('red')
-          .removeClass('yellow')
-          .removeClass('purple')
+          .removeClass('green')
+          .removeClass('blue')
           .addClass(this.colorHexToName(this.colors[index]));
 
         el.removeClass('inactive');

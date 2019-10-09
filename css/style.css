@@ -54,11 +54,11 @@ a:focus, a:active {
 }
 
 .stick.red {
-    background-color: #C20027;
+    background-color: #f7e411;
 }
 
 .stick.yellow {
-    background-color: #32a852;
+    background-color: #44bfa3;
 }
 
 .stick.purple {
@@ -75,7 +75,7 @@ a:focus, a:active {
     width: 53px;
     height: 53px;
     z-index: 1011;
-    background-color: #C20027;
+    background-color: #f7e411;
     border-radius: 50%;
 }
 
@@ -127,7 +127,7 @@ a:focus, a:active {
     width: 513px;
     height: 162px;
     background-image: linear-gradient(to right, #DF4C73, #7A77B9 );
-    border: 20px solid #FF4571;
+    border: 25px solid #FFC49B;
     border-radius: 40%;
     text-align: center;
     margin-top: -10%;
@@ -171,7 +171,7 @@ a:focus, a:active {
 }
 
 .hint span {
-    color: #286FB4;
+    color: #f7e411;
 }
 
 .how-to-play {
@@ -210,11 +210,11 @@ a:focus, a:active {
 
 .bar-1 {
     height: 180px;
-    background: #C20027;
+    background: #f7e411;
 }
 .bar-2 {
     height: 120px;
-    background: #32a852;
+    background: #44bfa3;
 }
     
 .bar-3 {
@@ -231,7 +231,7 @@ a:focus, a:active {
 }
 
 .section-3 .ball-demo {
-    background-color: #C20027;
+    background-color: #f7e411;
 }
 
 .section-3.bar-1 {
@@ -261,7 +261,7 @@ a:focus, a:active {
 }
 
 .final-score {
-    color: #FFE345;
+    color: #f7e411;
     font-weight: 900;
     font-size: 130px;
     letter-spacing: -6px;
@@ -352,7 +352,7 @@ i {
     position: fixed;
     right: 54px;
     top: 20px;
-    color: #33485F;
+    color: #feee;
     font-size: 90px;
     font-weight: 900;
     letter-spacing: -0.1em;

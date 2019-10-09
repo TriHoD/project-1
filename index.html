@@ -10,73 +10,84 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <div id="follower">
-            <div id="circle"></div>
-        </div>
-        <div class="start-game game-full-flex" id="start-game">
-            <div id="gameName">
-                <p id="logoGame">
-                    <span>C</span>
-                    <span>A</span>
-                    <span>T</span>
-                    <span>C</span>
-                    <span>H</span>
-                    <span>G</span>
-                    <span>E</span>
-                    <span>M</span>
-                </p>
-                <a id="playButton" href="#" onclick="game.start()">Play</a>
-                <!-- <h4 id="note">note: <span> blue </span> diamond always come firsts</h4> -->
-                <h4 id="hint">Hint: <span style="color: #37b5f0">&nbsp;&nbsp;blue&nbsp;&nbsp;</span> diamond always come firsts </h4>
-            </div>
+<div class="container">
+            <div class="start-game game-full-flex" id="start-game">
 
-            <div id="explanation">
-                <div id="explain1">
-                    <h4>Gem stones </br> with three colors</h4>
-                    <div id="content">
-                        <div id="gemDemo">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                <div class="start-game-top"></div>    
+
+                <div class="logo-holder">
+                    <p class="logo">
+                        <span>C</span>
+                        <span>o</span>
+                        <span>l</span>
+                        <span>o</span>
+                        <span>r</span>
+                        <span>o</span>
+                        <span>n</span>
+                    </p>
+                    <a class="play-button" href="#" onclick="game.start()">Play</a>
+                    <h4 class="hint">hint: <span>blue</span> ball always comes first</h4>
+                </div>
+
+                <div class="how-to-play">
+                    <div class="section section-1">
+                        <h4>Bouncing ball<br>changes color</h4>
+                        <div class="content">
+                            <div class="ball-demo" id="ball-demo"></div>
+                        </div>
                     </div>
+                    <div class="section section-2">
+                        <h4>CLick on the bar to change the colors<br>(Red, Yellow, Purple)</h4>
+                        <div class="content">
+                            <div class="bar bar-1" data-index="0"></div>
+                            <div class="bar bar-2"></div>
+                            <div class="bar bar-3"></div>
+                        </div>
+                    </div>
+                    <div class="section section-3">
+                        <h4>Always match the<br>ball and bar colors</h4>
+                        <div class="content">
+                            <div class="ball-demo" id="ball-demo"></div>
+                            <div class="bar bar-1"></div>
+                        </div>
                     </div>
                 </div>
-                <div id="explain2">
-                    <h4>Tap or click to change the color match with the gems</br>(Blue, Red or Yellow)</h4>
-                    <div id="content">
 
-                    </div >
-                </div>
             </div>
-        </div>
 
-        <div id="stopGame">
-            <div id="scoreContainer">
-                <h1>CATCHGEM</h1>
-                <div id ="finalScore"></div>
-                <div id="result"></div>
-                <h4> Tweet and challenge with your friends</h4>
-                <p>
-                    <a id="tweet" href="#" onclick="game.generateTweet()">
-                        <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
-                    </a>
-                </p>
-                <div>
-                        <a id="playAgain" href="#" onclick="game.start()">Play Again</a>
-                        <a id="mainMenu" href="#" onclick="game.intro()">Menu</a>
+            <div class="stop-game game-full-flex">
+
+                <div class="score-container">
+
+                    <h1>Coloron</h1>
+
+                    <div class="final-score"></div>
+                    <div class="result"></div>
+
+                    <h4>Tweet to challenge friends</h4>
+
+                    <p>
+                        <a class="tweet" href="#" onclick="game.generateTweet()">
+                            <i class="fa fa-twitter" aria-hidden="true"></i> Tweet
+                        </a>
+                    </p>
+
+                    <div>
+                        <a class="play-again" href="#" onclick="game.start()">Play Again</a>
+                        <a class="main-menu" href="#" onclick="game.intro()">Menu</a>
+                    </div>
+
                 </div>
-            </div>
-        </div>
 
-        <div class="scene">
-                <div class="learn-to-play">Click to change the color!</div>
+            </div>
+
+            <div class="scene">
+                <div class="learn-to-play">Click on the bars to change the color!</div>
                 <div class="score" id="score"></div>
                 <div class="ball-holder"></div>
+                <div class="sticks" id="sticks"></div>
             </div>
-
+            <!-- <div class="noise"></div> -->
     </div>
     <script src="js/app.js"></script>
 </body>

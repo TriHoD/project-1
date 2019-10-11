@@ -100,8 +100,8 @@ class Game {
 
     /**
      * Takes players score and generates the cheering copy
-     * @param  {int} score
-     * @return {string} grade
+    //  * @param  {int} score
+    //  * @return {string} grade
      */
     showGrade(score) {
         if(score > 30) return "Chuck Norris?";

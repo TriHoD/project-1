@@ -6,7 +6,7 @@ A simple and fun game built by HTML CSS and JS, where the ball will have random 
 ##Motivation
 
 The game got inspire by a game call "RED OR BLUE" 
-![Image of RED OR BLUE] (img/Preference.png)
+![Image of RED OR BLUE](img/Preference.png)
 
 ##Build Status: Working
 

@@ -10,4 +10,12 @@ The game got inspire by a game call "RED OR BLUE"
 
 ##Build Status: Working
 
-##
+##Tech/framework
+
+HTML |  CSS | Javascript | Greensock |
+
+GreenSock is a JavaScript framework which makes it easy to animate HTML elements. https://greensock.com/
+
+## User Story:
+
+After the landing page has loaded, you need to click or touch the Play button to start the game, then the sticks will appear you have to click or touch the stick in order to change the color. The ball should appear on top with random color. Your goal is to make the stick match the color with the ball.

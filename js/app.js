@@ -14,14 +14,13 @@ class Game {
         this.prevColor = null; // used as a holder to prevent ball colors from repeating
     }
 
-    //  * The game screen is scalable. I took 1200x800px as the initial scale.
-    //  * In order to display the game an many screen sizes properly
-    //  * I have to compare the player's sreen size to the initial scale,
+    //  * The game screen is scalable. 1200x800px is the initial scale.
+    //  * In order to display the game in many screen sizes properly
+    //  * compare the player's sreen size to the initial scale,
     //  * then scale the game using CSS Transform to fit the screen properly
-    //  * The function is called in the 
-    //  controller andr and anywhere where I need
-    //  * to recalculate the scale on screen resize or device rotation
-    //  */
+    //  * The function is called in the controller
+    //  * and where need to recalculate the scale on screen resize or device rotation
+
     calculateScale() {
         this.screen = $(window).width(); // screen width
         this.screenHeight = $(window).height();
@@ -42,14 +41,14 @@ class Game {
 
     generateBall() {
         this.balltween = new TimelineMax({repeat: -1, paused: 1});
-        $('.scene .ball-holder').append('<div class="ball red" id="ball"></div>');
+        $('.scene .ball-holder').append('<div class="ball yellow" id="ball"></div>');
         this.bounce();
     }
 
     generateTweet() {
         let top = $(window).height() / 2 - 150;
         let left = $(window).width() / 2 - 300;
-        window.open();
+        window.open("https://twitter.com/intent/tweet?&amp;text=I scored "+ this.score +" points! Can you beat my score?&amp", "TweetWindow", "width=600px,height=300px,top=" + top + ",left=" + left);
     }
 
     /**
@@ -58,8 +57,6 @@ class Game {
     intro() {
 
         TweenMax.killAll();
-      
-        //TweenMax.to('.splash', 0.3, { opacity: 0, display: 'none', delay: 1 })
 
         $('.stop-game').css('display', 'none');
         $('.start-game').css('display', 'flex');
@@ -91,17 +88,14 @@ class Game {
     showResult() {
         let score = this.score;
         $('.stop-game').css('display', 'flex');
-        $('.stop-game .final-score').text(score + '!');
+        $('.stop-game .final-score').text(score);
         $('.stop-game .result').text(this.showGrade(score));
-        $('.nominee').show();
-
         let resultTimeline = new TimelineMax();
         resultTimeline
             .fromTo('.stop-game .score-container', 0.7, { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, ease: Elastic.easeOut.config(1.25, 0.5)})
             .fromTo('.stop-game .final-score', 2, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(2, 0.5)}, 0)
             .fromTo('.stop-game .result', 1, { scale: 0.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5)}, 0.3)
             ;
-
     }
 
     /**
@@ -125,8 +119,6 @@ class Game {
         this.stop(); // stop the game
 
         $('.start-game, .stop-game').css('display', 'none'); // hide all the popups
-        $('.nominee').hide();
-
         new Game();
         this.score = 0; // reset
 
@@ -189,7 +181,7 @@ class Game {
         if(this.isRunning) {
             this.stop();
         } else {
-            this.intro();
+            // this.intro();
         }
 
     }
@@ -200,13 +192,6 @@ class Game {
      * and the ball appears and falls down
      */
     moveToStart() {        
-
-        let tip = new TimelineMax({ delay: 2});
-
-        tip
-            .fromTo('.learn-to-play', 1, { scale: 0 }, { scale: 1, opacity: 1, ease: Elastic.easeOut.config(1.25, 0.5) })
-            .to('.learn-to-play', 1, { scale: 0, opacity: 0, ease: Elastic.easeOut.config(1.25, 0.5) }, 3)
-
         TweenMax.fromTo('#ball', this.time,
                         { 
                             scale: 0 
@@ -287,7 +272,6 @@ class Game {
      * And changes the ball color
      */
     bounce() {
-
         this.balltween
                 .to('#ball', this.time/2, {y: '+=250px', scaleY: 0.7, transformOrigin: "bottom", ease: Power2.easeIn,
                     onComplete: () => {
@@ -300,7 +284,7 @@ class Game {
                         }
                         this.prevColor = this.color;
                         TweenMax.to('#ball', 0.5, {backgroundColor: this.color});
-                        $('#ball').removeClass('red')
+                        $('#ball').removeClass('yellow')
                                   .removeClass('green')
                                   .removeClass('blue')
                                   .addClass((new Color).colorHexToName(this.color));
@@ -314,7 +298,7 @@ class Game {
         let stickWidth = $('.stick').width();
         let score = this.score;
 
-        $('#sticks .stick').each(function(){
+        $('#sticks .stick').each(function() {
             if($(this).offset().left < ballPos && $(this).offset().left > (ballPos - stickWidth)) {
                 
                 if( Color.getColorFromClass($(this)) == Color.getColorFromClass('#ball') ) {
@@ -323,12 +307,9 @@ class Game {
                     $('#score').text(score);
                     TweenMax.fromTo('#score', 0.5, { scale: 1.5 }, { scale: 1, ease: Elastic.easeOut.config(1.5, 0.5) });
                 } else {
-
                     // you loose
                     game.stop();
-
                 }
-
             }
         })
 
@@ -350,19 +331,18 @@ class Stick {
 }
 
 class Color {
-
     constructor() {
         this.colors = ["#f7e411", "#44bfa3", "#286FB4"];
     }
-//  44bfa3 32a852
+
     getRandomColor() {
         let color = this.colors[Math.floor(Math.random() * 3)]; 
         return color;
-    } 
+    }
 
     colorHexToName(color) {
         let colors = ["#f7e411", "#44bfa3", "#286FB4"];
-        let names = ["red", "green", "blue"];
+        let names = ["yellow", "green", "blue"];
         let index = colors.indexOf(color);
         if(index == -1) return false;
         return names[index];
@@ -370,7 +350,7 @@ class Color {
 
     /**
      * Changes the color of an element
-     * As we as adds verbal name of the color
+     * As we add verbal name of the color
      */
     changeColor(el) {
         let index = el.data("index");
@@ -381,15 +361,14 @@ class Color {
             .css('background-color', this.colors[index])
             .data('index', index);
 
-        el.removeClass('red')
+        el.removeClass('yellow')
           .removeClass('green')
           .removeClass('blue')
           .addClass(this.colorHexToName(this.colors[index]));
 
         el.removeClass('inactive');
     }
-
-
+jqsplit
     /**
      * Since the ball and sticks have several classes
      * This method searches for the color class
@@ -398,8 +377,8 @@ class Color {
      */
     static getColorFromClass(el) {
         let classes = $(el).attr('class').split(/\s+/);
-        for (var i = 0, len = classes.length; i < len; i++) {          
-            if(classes[i] == 'red' || classes[i] == 'yellow' || classes[i] == 'purple') {
+        for (let i = 0, len = classes.length; i < len; i++) {          
+            if(classes[i] == 'yellow' || classes[i] == 'green' || classes[i] == 'blue') {
                 return classes[i];
             }
         }
@@ -408,11 +387,10 @@ class Color {
 
 let game = new Game();
 let color = new Color();
-// let userAgent = window.navigator.userAgent;
-
+let userAgent = window.navigator.userAgent;
 
 $(document).ready(function(){
-    //game.showResult();
+    // game.showResult();
     game.scaleScreen();
     game.intro();
     //game.start();
@@ -431,11 +409,11 @@ $(document).on('click', '.section-2 .bar', function(){
     color.changeColor($(this));
 });
 
-// $(window).resize(function(){
-//     if (!userAgent.match(/iPad/i) && !userAgent.match(/iPhone/i)) {
-//         game.scaleScreenAndRun();
-//     }
-// });
+$(window).resize(function(){
+    if (!userAgent.match(/iPad/i) && !userAgent.match(/iPhone/i)) {
+        game.scaleScreenAndRun();
+    }
+});
 
 $(window).on("orientationchange",function(){
     game.scaleScreenAndRun();

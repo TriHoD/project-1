@@ -48,7 +48,7 @@ class Game {
     generateTweet() {
         let top = $(window).height() / 2 - 150;
         let left = $(window).width() / 2 - 300;
-        window.open("https://twitter.com/intent/tweet?&amp;text=I scored "+ this.score +" points! Can you beat my score?&amp", "TweetWindow", "width=600px,height=300px,top=" + top + ",left=" + left);
+        window.open("https://twitter.com/intent/tweet?&amp;text=I scored "+ this.score +" points at COLORBALL! Can you beat my score?&amp", "TweetWindow", "width=600px,height=300px,top=" + top + ",left=" + left);
     }
 
     /**

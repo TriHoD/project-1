@@ -26,3 +26,4 @@ After the landing page has loaded, you need to click or touch the Play button to
 Try to refactor code and keep it vanilla without side api.
 Add Pause and Setting sound in one button;
 
+## Try Me! https://trihod.github.io/project-1/ 
